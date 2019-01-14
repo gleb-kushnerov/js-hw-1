@@ -49,28 +49,34 @@
         }
     }
 
-    // if (gender === 'м' || gender === 'М') {
-    //     if (age >= 63) {
-    //         pension = 'да';
-    //     } else {
-    //         pension = 'нет';
-    //     }
-    // } else {
-    //     if (age >= 58) {
-    //         pension = 'да';
-    //     } else {
-    //         pension = 'нет';
-    //     }
-    // }
+    function userPension() {
+        if (gender === 'м' || gender === 'М') {
+            if (age >= 63) {
+                pension = 'да';
+            } else {
+                pension = 'нет';
+            }
+        } else {
+            if (age >= 58) {
+                pension = 'да';
+            } else {
+                pension = 'нет';
+            }
+        }
+        return pension;
+    }
+
+
 
     function userCard() {
         userName();
         userSurname();
         userGender();
         userAge();
+        userPension();
         return alert(`Полное имя: ${name} ${surname}
-           Пол: ${gender}
-           На пенсии: ${pension}`);
+                      Пол: ${gender}
+                      На пенсии: ${pension}`);
     }
     userCard();
 }());
